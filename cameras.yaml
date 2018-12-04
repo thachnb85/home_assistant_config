@@ -1,0 +1,6 @@
+  - platform: generic
+    still_image_url: camera_odroid_url
+    name: "Backgate Camera"
+    username: !secret camera_odroid_username
+    password: !secret camera_odroid_password
+    
