@@ -1,0 +1,14 @@
+sensor.yr_symbol:
+  attribution: Weather forecast from met.no, delivered by the Norwegian Meteorological
+    Institute.
+  entity_picture: https://api.met.no/weatherapi/weathericon/1.1/?symbol=4;content_type=image/png
+  friendly_name: Weather
+  
+switch.broadlink_switch1:
+  assumed_state: false
+  icon: mdi:ceiling-light
+
+switch.broadlink_switch2:
+  assumed_state: false
+  icon: mdi:pine-tree
+  
