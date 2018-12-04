@@ -65,7 +65,7 @@ cloud:
 
 # Switch:
 switch: !include switches.yaml
-
+camera: !include cameras.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
