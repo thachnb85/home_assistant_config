@@ -32,4 +32,4 @@
     name: Living Room Camera
     icon: mdi:cctv
     entities:
-      - camera.camera_odroid
+      - camera.camera_01
