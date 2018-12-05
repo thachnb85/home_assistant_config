@@ -17,14 +17,6 @@
     entities:
       - switch.broadlink_tv_power
       - switch.broadlink_tv_netflix
-      - switch.broadlink_tv_return
-      - switch.broadlink_tv_home
-      - switch.broadlink_tv_back
-      - switch.broadlink_tv_ok
-      - switch.broadlink_tv_right
-      - switch.broadlink_tv_left
-      - switch.broadlink_tv_up
-      - switch.broadlink_tv_down
       - switch.broadlink_tv_vol_up
       - switch.broadlink_tv_vol_down
       
