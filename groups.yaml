@@ -5,6 +5,7 @@
       - group.climate
       - group.living_room_light_switch
       - group.living_room_tv_switch
+      - group.backyard_camera
       
   living_room_light_switch:
     name: Living Room
@@ -13,6 +14,7 @@
       - switch.broadlink_switch2
 
   living_room_tv_switch:
+    view: true
     name: Roku TV
     entities:
       - switch.broadlink_tv_power
