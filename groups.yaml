@@ -3,15 +3,31 @@
     icon: mdi:home
     entities:
       - group.climate
-      - group.living_room_switch
-      - group.backyard_camera
+      - group.living_room_light_switch
+      - group.living_room_tv_switch
       
-  living_room_switch:
+  living_room_light_switch:
     name: Living Room
     entities:
       - switch.broadlink_switch1
       - switch.broadlink_switch2
-  
+
+  living_room_tv_switch:
+    name: Roku TV
+    entities:
+      - switch.broadlink_tv_power
+      - switch.broadlink_tv_netflix
+      - switch.broadlink_tv_return
+      - switch.broadlink_tv_home
+      - switch.broadlink_tv_back
+      - switch.broadlink_tv_ok
+      - switch.broadlink_tv_right
+      - switch.broadlink_tv_left
+      - switch.broadlink_tv_up
+      - switch.broadlink_tv_down
+      - switch.broadlink_tv_vol_up
+      - switch.broadlink_tv_vol_down
+      
   climate:
     name: Temperature
     icon: mdi:oil-temperature
