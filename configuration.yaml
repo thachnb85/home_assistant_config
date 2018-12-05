@@ -36,7 +36,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+# discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -62,11 +62,6 @@ tts:
 
 # Cloud
 cloud:
-
-# Media Player
-media_player:
-  - platform: roku
-  - host: 10.0.0.100
   
 # Switch:
 switch: !include switches.yaml
