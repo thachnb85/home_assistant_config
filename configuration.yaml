@@ -66,6 +66,7 @@ cloud:
 # Media Player
 media_player:
   - platform: roku
+  - host: 10.0.0.100
   
 # Switch:
 switch: !include switches.yaml
