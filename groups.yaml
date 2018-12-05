@@ -5,7 +5,7 @@
       - group.climate
       - group.living_room_light_switch
       - group.living_room_tv_switch
-      - group.backyard_camera
+      - group.camera_01
       
   living_room_light_switch:
     name: Living Room
@@ -28,8 +28,8 @@
     entities:
       - sensor.home_temperature
 
-  backyard_camera:
-    name: Backyard
+  camera_01:
+    name: Living Room Camera
     icon: mdi:cctv
     entities:
-      - camera.backgate_camera
+      - camera.camera_odroid
