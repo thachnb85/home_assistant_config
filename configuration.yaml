@@ -63,6 +63,10 @@ tts:
 # Cloud
 cloud:
 
+# Media Player
+media_player:
+  - platform: roku
+  
 # Switch:
 switch: !include switches.yaml
 camera: !include cameras.yaml
