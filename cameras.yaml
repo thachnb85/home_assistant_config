@@ -2,4 +2,3 @@
     still_image_url: !secret camera_odroid_url
     name: "Camera 01"
     scan_interval: 1 
-    
