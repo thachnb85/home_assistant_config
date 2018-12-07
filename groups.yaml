@@ -3,14 +3,12 @@
     icon: mdi:home
     entities:
       - group.home_sensor
-      - group.living_room_switch_and_sensor
-      - group.living_room_tv_switch
-      - group.camera_01
+      - group.living_room
       - group.kitchen
       - group.garage
       - group.basement
 
-  living_room_switch_and_sensor:
+  living_room:
     name: Living Room
     entities:
       - switch.broadlink_switch1
@@ -18,7 +16,7 @@
       - binary_sensor.motion_sensor_158d00020dfca1
       - binary_sensor.door_window_sensor_158d000273bb1d
 
-  living_room_tv_switch:
+  tv_switch:
     view: true
     name: Roku TV
     entities:
@@ -39,6 +37,7 @@
 
   camera_01:
     name: Living Room Camera
+    view: true
     icon: mdi:cctv
     entities:
       - camera.camera_01
