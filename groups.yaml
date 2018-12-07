@@ -6,6 +6,7 @@
       - group.living_room_light_switch
       - group.living_room_tv_switch
       - group.camera_01
+      - binary_sensor.motion_sensor_158d00020dfca1
       
   living_room_light_switch:
     name: Living Room
@@ -33,3 +34,9 @@
     icon: mdi:cctv
     entities:
       - camera.camera_01
+  
+  garage:
+    name: Garage
+    icon: mdi:garage
+    entities:
+      - binary_sensor.motion_sensor_158d00020dfca5
