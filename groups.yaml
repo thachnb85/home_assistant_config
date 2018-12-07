@@ -6,14 +6,17 @@
       - group.living_room_switch_and_sensor
       - group.living_room_tv_switch
       - group.camera_01
+      - group.kitchen
       - group.garage
+      - group.basement
 
-living_room_switch_and_sensor:
+  living_room_switch_and_sensor:
     name: Living Room
     entities:
       - switch.broadlink_switch1
       - switch.broadlink_switch2
       - binary_sensor.motion_sensor_158d00020dfca1
+      - binary_sensor.door_window_sensor_158d000273bb1d
 
   living_room_tv_switch:
     view: true
@@ -23,7 +26,16 @@ living_room_switch_and_sensor:
       - switch.broadlink_tv_netflix
       - switch.broadlink_tv_vol_up
       - switch.broadlink_tv_vol_down
-      
+  
+  home_sensor:
+    name: Home Sensors
+    entities:
+      - binary_sensor.door_window_sensor_158d000273bb1d
+      - binary_sensor.door_window_sensor_158d000273bbe4
+      - binary_sensor.door_window_sensor_158d000275f11d
+      - binary_sensor.motion_sensor_158d00020dfca1
+      - binary_sensor.motion_sensor_158d00020dfca5
+
   climate:
     name: Temperature
     icon: mdi:oil-temperature
@@ -35,7 +47,19 @@ living_room_switch_and_sensor:
     icon: mdi:cctv
     entities:
       - camera.camera_01
+
+  kitchen:
+    name: Kitchen
+    icon: mdi:silverware-variant
+    entities:
+      - binary_sensor.door_window_sensor_158d000273bbe4
   
+  basement:
+    name: Basement
+    icon: mdi:floor-plan
+    entities:
+      - binary_sensor.door_window_sensor_158d000275f11
+
   garage:
     name: Garage
     icon: mdi:garage

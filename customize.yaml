@@ -12,12 +12,27 @@ switch.broadlink_switch2:
   assumed_state: false
   icon: mdi:pine-tree
   
-binary_sensor.motion_sensor_158d00020dfca1
+binary_sensor.motion_sensor_158d00020dfca1:
   assumed_state: false
   icon: mdi:run-fast
   friendly_name: Living Room Motion
   
-binary_sensor.motion_sensor_158d00020dfca5
+binary_sensor.motion_sensor_158d00020dfca5:
   assumed_state: false
   icon: mdi:run-fast
   friendly_name: Garage Motion
+
+binary_sensor.door_window_sensor_158d000273bb1d:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Front Door
+
+binary_sensor.door_window_sensor_158d000273bbe4:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Kitchen Door
+
+binary_sensor.door_window_sensor_158d000275f11d:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Basement Door
