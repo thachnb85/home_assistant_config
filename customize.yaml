@@ -3,6 +3,10 @@ sensor.yr_symbol:
     Institute.
   entity_picture: https://api.met.no/weatherapi/weathericon/1.1/?symbol=4;content_type=image/png
   friendly_name: Weather
+
+sensor.home_temperature:
+  friendly_name: Temperature
+  icon: mdi:oil-temperature
   
 switch.broadlink_switch1:
   assumed_state: false
@@ -30,7 +34,7 @@ binary_sensor.door_window_sensor_158d000273bb1d:
 binary_sensor.door_window_sensor_158d000273bbe4:
   assumed_state: false
   icon: mdi:door
-  friendly_name: Kitchen Door
+  friendly_name: Back Door
 
 binary_sensor.door_window_sensor_158d000275f11d:
   assumed_state: false
