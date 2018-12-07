@@ -12,3 +12,12 @@ switch.broadlink_switch2:
   assumed_state: false
   icon: mdi:pine-tree
   
+binary_sensor.motion_sensor_158d00020dfca1
+  assumed_state: false
+  icon: mdi:run-fast
+  friendly_name: Living Room Motion
+  
+binary_sensor.motion_sensor_158d00020dfca5
+  assumed_state: false
+  icon: mdi:run-fast
+  friendly_name: Garage Motion
