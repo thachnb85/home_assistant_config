@@ -41,6 +41,12 @@
     icon: mdi:cctv
     entities:
       - camera.camera_01
+  
+  camera_02:
+    name: Garden Camera
+    icon: mdi:cctv
+    entities:
+      - camera.camera_02
 
   kitchen:
     name: Kitchen

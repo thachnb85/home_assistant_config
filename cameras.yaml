@@ -2,3 +2,10 @@
     still_image_url: !secret camera_odroid_url
     name: "Camera 01"
     scan_interval: 1 
+
+  - platform: yi
+    name: Garden
+    host: !secret camera_yi_ip
+    password: !secret camera_yi_password
+    path: /home/camera/feed
+    ffmpeg_arguments: '-vf scale=800:450'
