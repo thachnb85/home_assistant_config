@@ -15,6 +15,11 @@ switch.broadlink_switch1:
 switch.broadlink_switch2:
   assumed_state: false
   icon: mdi:pine-tree
+
+binary_sensor.door_window_sensor_158d000275ef5d:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Backgate
   
 binary_sensor.motion_sensor_158d00020dfca1:
   assumed_state: false

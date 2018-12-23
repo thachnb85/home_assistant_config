@@ -4,8 +4,6 @@
     scan_interval: 1 
 
   - platform: yi
-    name: Garden
+    name: "Camera 02"
     host: !secret camera_yi_ip
-    password: !secret camera_yi_password
-    path: /home/camera/feed
-    ffmpeg_arguments: '-vf scale=800:450'
+    password: !secret camera_yi_pwd

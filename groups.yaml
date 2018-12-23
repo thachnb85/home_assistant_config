@@ -4,17 +4,13 @@
     entities:
       - group.home_sensor
       - group.living_room
-      - group.kitchen
-      - group.garage
-      - group.basement
+      - group.camera_02
 
   living_room:
-    name: Living Room
+    name: Switches
     entities:
       - switch.broadlink_switch1
       - switch.broadlink_switch2
-      - binary_sensor.motion_sensor_158d00020dfca1
-      - binary_sensor.door_window_sensor_158d000273bb1d
 
   tv_switch:
     view: true
@@ -31,6 +27,7 @@
       - binary_sensor.door_window_sensor_158d000273bb1d
       - binary_sensor.door_window_sensor_158d000273bbe4
       - binary_sensor.door_window_sensor_158d000275f11d
+      - binary_sensor.door_window_sensor_158d000275ef5d
       - binary_sensor.motion_sensor_158d00020dfca1
       - binary_sensor.motion_sensor_158d00020dfca5
       - sensor.home_temperature

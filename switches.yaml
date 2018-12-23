@@ -13,7 +13,7 @@
     timeout: 15
     switches:
       broadlink_switch2:
-        friendly_name: "Christmas Tree Light"
+        friendly_name: "Projection Deco Light"
         command_on: 'shwyAAUTEQgRCBEHEQcRBwUTEQgFFBEIEQgGEwYTBRMGExEIEQgFEwUTBbQRBwUUEQgRCAUUAAAAAAAA==='
         command_off: 'sgcyABIGBxIHEgcSBxIHEhIGBxIHEgeyEgYGEhIGEgYGEgcSEgYSBhIGEgYSBgcREgYGEhIGAAAA==='
   - platform: broadlink
