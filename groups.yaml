@@ -4,7 +4,6 @@
     entities:
       - group.home_sensor
       - group.living_room
-      - group.camera_02
 
   living_room:
     name: Switches
@@ -38,12 +37,6 @@
     icon: mdi:cctv
     entities:
       - camera.camera_01
-  
-  camera_02:
-    name: Garden Camera
-    icon: mdi:cctv
-    entities:
-      - camera.camera_02
 
   kitchen:
     name: Kitchen

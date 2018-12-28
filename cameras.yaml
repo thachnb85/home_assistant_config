@@ -2,8 +2,3 @@
     still_image_url: !secret camera_odroid_url
     name: "Camera 01"
     scan_interval: 1 
-
-  - platform: yi
-    name: "Camera 02"
-    host: !secret camera_yi_ip
-    password: !secret camera_yi_pwd
