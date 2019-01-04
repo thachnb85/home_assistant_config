@@ -40,6 +40,7 @@ Symlink to make python3 point to 3.6 instead of 3.5
 ```
 rm /usr/bin/python3
 ln -s /usr/bin/python3.6 /usr/bin/python3
+curl https://bootstrap.pypa.io/get-pip.py | sudo -H python3.6
 ```
 
 
@@ -57,13 +58,8 @@ cd /srv/homeassistant
 python3 -m venv .
 source bin/activate
 python3 -m pip install wheel
-pip3 install broadlink==0.9.0
-pip3 install homeassistant
-```
-
-#### Run Home Assistant Server
-```
-hass
+pip3.6 install broadlink==0.9.0
+pip3.6 install homeassistant
 ```
 
 ### Auto start homeassistant on boot
@@ -84,6 +80,11 @@ ExecStart=/srv/homeassistant/bin/hass -c "/root/.homeassistant"
 
 [Install]
 WantedBy=multi-user.target
+```
+
+Then start it:
+```
+sudo systemctl --system daemon-reload
 ```
 
 ### Upgrade and Install python pkg if needed:
