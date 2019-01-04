@@ -34,6 +34,12 @@ apt-get install python3 python3-venv python3-pip
 Install python3.6 on ubuntu 14.02
 https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get
 
+Symlink to make python3 point to 3.6 instead of 3.5
+```
+rm /usr/bin/python3
+ln -s /usr/bin/python3.6 /usr/bin/python3```
+
+
 #### Adding homeassistant user
 ```
 useradd -rm homeassistant -G dialout
@@ -71,7 +77,7 @@ After=network-online.target
 [Service]
 Type=simple
 User=%i
-ExecStart=/srv/homeassistant/bin/hass -c "/home/YOUR_USER/.homeassistant"
+ExecStart=/srv/homeassistant/bin/hass -c "/root/.homeassistant"
 
 [Install]
 WantedBy=multi-user.target
