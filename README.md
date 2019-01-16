@@ -41,25 +41,28 @@ sudo apt-get update
 sudo apt-get install python3.6
 sudo apt-get dist-upgrade
 sudo apt-get install python-pip python3.6-dev
+sudo pip install --upgrade virtualenv
 ```
 
 
 #### Adding homeassistant user
 ```
-useradd -rm homeassistant -G dialout
-cd /srv
-mkdir homeassistant
-chown homeassistant:homeassistant -R /srv/homeassistant/
-sudo -u homeassistant -H -s
+sudo adduser --system homeassistant
+sudo addgroup homeassistant
+sudo usermod -G dialout -a homeassistant
+sudo mkdir /srv/homeassistant
+
+sudo chown homeassistant:homeassistant /srv/homeassistant
+sudo su -s /bin/bash homeassistant
+
 ```
 #### Create virtual environment
 ```
-cd /srv/homeassistant
-python3 -m venv .
-source bin/activate
+virtualenv -p python3 /srv/homeassistant
+pip3 install --upgrade homeassistant
 python3 -m pip install wheel
-pip3.6 install broadlink==0.9.0
-pip3.6 install homeassistant
+pip3 install broadlink==0.9.0
+pip3 install homeassistant
 ```
 
 ### Auto start homeassistant on boot
