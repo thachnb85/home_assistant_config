@@ -22,6 +22,8 @@ Travis CI ![alt text](https://travis-ci.org/thachnb85/home_assistant_config.svg?
 # Installation Guide
 
 ### 1. Install Ubuntu for Odroid
+https://wiki.odroid.com/odroid-xu4/os_images/linux/start
+Recommend kernel 4.14
 
 ### 2. Install Home Assistant 
 Guide link: https://www.home-assistant.io/docs/installation/raspberry-pi/
