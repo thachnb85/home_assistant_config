@@ -35,7 +35,13 @@ apt-get install python3 python3-venv python3-pip
 ```
 
 Install python3.6 on ubuntu 14.02
-https://askubuntu.com/questions/865554/how-do-i-install-python-3-6-using-apt-get
+```
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt-get update
+sudo apt-get install python3.6
+sudo apt-get dist-upgrade
+sudo apt-get install python-pip python3.6-dev
+```
 
 
 #### Adding homeassistant user
