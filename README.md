@@ -101,6 +101,8 @@ pip3 install --upgrade homeassistant
 exit
 sudo systemctl start home-assistant@homeassistant.service
 ```
+### Port forwarding and SSL
+https://www.youtube.com/watch?v=BIvQ8x_iTNE
 
 ### Problem?
 In case of problems, you will be able to review the logs through journalctl:
