@@ -58,9 +58,10 @@ sudo su -s /bin/bash homeassistant
 ```
 #### Create virtual environment
 ```
-virtualenv -p python3 /srv/homeassistant
+virtualenv -p python3.6 /srv/homeassistant
+source /srv/homeassistant/bin/activate
 pip3 install --upgrade homeassistant
-python3 -m pip install wheel
+pip3 install wheel
 pip3 install broadlink==0.9.0
 pip3 install homeassistant
 ```
@@ -74,12 +75,13 @@ Adding content for files:
 ```
 [Unit]
 Description=Home Assistant
-After=network-online.target
+After=network.target time-sync.target
+Requires=time-sync.target
 
 [Service]
 Type=simple
 User=%i
-ExecStart=/srv/homeassistant/bin/hass -c "/root/.homeassistant"
+ExecStart=/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant"
 
 [Install]
 WantedBy=multi-user.target
@@ -98,6 +100,12 @@ source /srv/homeassistant/bin/activate
 pip3 install --upgrade homeassistant
 exit
 sudo systemctl start home-assistant@homeassistant.service
+```
+
+### Problem?
+In case of problems, you will be able to review the logs through journalctl:
+```
+sudo journalctl -u homeassistant -f
 ```
 
 
