@@ -69,7 +69,7 @@ pip3 install broadlink==0.9.0
 ### Auto start homeassistant on boot
 Check user we use on boot, here is root.
 
-```nano /etc/systemd/system/home-assistant@homeassistant.service```
+```nano /etc/systemd/system/home-assistant.service```
 
 Adding content for files:
 ```
@@ -80,7 +80,7 @@ Requires=time-sync.target
 
 [Service]
 Type=simple
-User=%i
+User=root
 ExecStart=/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant"
 
 [Install]
@@ -95,18 +95,18 @@ Try to run homeassistant first:
 Then start it:
 ```
 sudo systemctl --system daemon-reload
-sudo systemctl enable home-assistant@homeassistant.service
-sudo systemctl start home-assistant@homeassistant.service
+sudo systemctl enable home-assistant.service
+sudo systemctl start home-assistant.service
 ```
 
 ### Upgrade and Install python pkg if needed:
 ```
-sudo systemctl stop home-assistant@homeassistant.service
+sudo systemctl stop home-assistant.service
 sudo su -s /bin/bash homeassistant
 source /srv/homeassistant/bin/activate
 pip3 install --upgrade homeassistant
 exit
-sudo systemctl start home-assistant@homeassistant.service
+sudo systemctl start home-assistant.service
 ```
 ### Port forwarding and SSL
 https://www.youtube.com/watch?v=BIvQ8x_iTNE
