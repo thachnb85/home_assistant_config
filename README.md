@@ -64,7 +64,6 @@ source /srv/homeassistant/bin/activate
 pip3 install --upgrade homeassistant
 pip3 install wheel
 pip3 install broadlink==0.9.0
-pip3 install homeassistant
 ```
 
 ### Auto start homeassistant on boot
