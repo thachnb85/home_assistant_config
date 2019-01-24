@@ -69,7 +69,7 @@ pip3 install broadlink==0.9.0
 ### Auto start homeassistant on boot
 Check user we use on boot, here is root.
 
-```nano /etc/systemd/system/home-assistant@root.service```
+```nano /etc/systemd/system/home-assistant@homeassistant.service```
 
 Adding content for files:
 ```
@@ -90,6 +90,7 @@ WantedBy=multi-user.target
 Then start it:
 ```
 sudo systemctl --system daemon-reload
+sudo systemctl start home-assistant@homeassistant.service
 ```
 
 ### Upgrade and Install python pkg if needed:
