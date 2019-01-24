@@ -87,9 +87,15 @@ ExecStart=/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant"
 WantedBy=multi-user.target
 ```
 
+Try to run homeassistant first:
+```
+/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant
+```
+
 Then start it:
 ```
 sudo systemctl --system daemon-reload
+sudo systemctl enable home-assistant@homeassistant.service
 sudo systemctl start home-assistant@homeassistant.service
 ```
 
