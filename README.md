@@ -31,7 +31,8 @@ Guide link: https://www.home-assistant.io/docs/installation/raspberry-pi/
 #### Prepare system
 ```
 apt-get upgrade -y
-apt-get install python3 python3-venv python3-pip
+apt-get install build-essential libssl-dev libffi-dev python3 python3-venv python3-pip
+
 ```
 
 Install python3.6 on ubuntu 14.02
