@@ -178,9 +178,10 @@ systemctl status zigbee2mqtt.service
 
 3- Edit Home Assistant configration.yaml
 
-Adding:
 ```
 nano /home/homeassistant/.homeassistant/configuration.yaml
+```
+Adding:
 ```
 mqtt:
   discovery: true
