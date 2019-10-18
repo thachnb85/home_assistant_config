@@ -116,6 +116,81 @@ In case of problems, you will be able to review the logs through journalctl:
 ```
 sudo journalctl -u homeassistant -f
 ```
+# Setup zigbee2mqtt.io
+### Hardware
+- Grab a CC2531 usb stick
+- There are 2 kinds of firmwares: Coordinator (allows pairing), and other is Router (just routing).
+- https://www.zigbee2mqtt.io/getting_started/flashing_the_cc2531.html
 
+### Install zigbee2mqtt and mosquitto broker
+- https://www.zigbee2mqtt.io/getting_started/running_zigbee2mqtt.html
+- Setup and run as service.
+- Install broker: https://mosquitto.org
+```
+apt-get install mosquitto
+```
+- Test the broker:
+```
+apt install mosquitto-clients
+
+mosquitto_sub -h 127.0.0.1 -t "test" &
+mosquitto_pub -h 127.0.0.1 -t "test" -m "Hello World" 
+```
+-> "Hello World" should show up in the terminal
+ 
+### Config with HA
+
+1- Add user in HA, using web interface adding user: mqtt, password: mqtt
+
+2- Edit the config of zigbee2mqtt
+```
+nano /opt/zigbee2mqtt/data/configuration.yaml
+```
+Then edit:
+```
+# Home Assistant integration (MQTT discovery)
+homeassistant: true
+
+# allow new devices to join
+permit_join: true
+
+# MQTT settings
+mqtt:
+  # MQTT base topic for zigbee2mqtt MQTT messages
+  base_topic: zigbee2mqtt
+  # MQTT server URL
+  server: 'mqtt://localhost'
+  # MQTT server authentication, uncomment if required:
+  user: mqtt
+  password: mqtt
+
+# Serial settings
+serial:
+  # Location of CC2531 USB sniffer
+  port: /dev/ttyACM0
+```
+
+- Check if setup is properly or not:
+```
+systemctl restart zigbee2mqtt.service
+systemctl status zigbee2mqtt.service
+```
+
+3- Edit Home Assistant configration.yaml
+
+Adding:
+```
+nano /home/homeassistant/.homeassistant/configuration.yaml
+```
+mqtt:
+  discovery: true
+  broker: 10.0.0.234  # Remove if you want to use builtin-in MQTT broker
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
+```
 
 
