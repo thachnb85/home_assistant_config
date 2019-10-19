@@ -72,10 +72,10 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 # Xiaomi Aqara Gateway
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret aqara_key
+#xiaomi_aqara:
+#  discovery_retry: 5
+#  gateways:
+#    - key: !secret aqara_key
 
 # MQTT
 mqtt:
