@@ -44,4 +44,50 @@
     name: Garage
     icon: mdi:garage
     entities:
-      - binary_sensor.motion_sensor_158d00020dfca5
+      - binary_sensor.0x00158d00020dfca5_occupancy  default_view:
+    view: true
+    icon: mdi:home
+    entities:
+      - group.living_status
+      - group.kitchen_status
+      - group.basement_status
+      - group.garage_status
+
+  tv_switch:
+    view: true
+    name: Roku TV
+    entities:
+      - switch.broadlink_tv_power
+      - switch.broadlink_tv_netflix
+      - switch.broadlink_tv_vol_up
+      - switch.broadlink_tv_vol_down
+
+  living_status:
+    name: Living Room
+    entities:
+      - binary_sensor.0x00158d00029b063b_contact
+      - binary_sensor.door_window_sensor_158d000273bb1d
+      - binary_sensor.motion_sensor_158d00020dfca1
+      - switch.broadlink_switch1
+      - switch.broadlink_switch2
+      - sensor.home_temperature
+
+  kitchen_status:
+    name: Kitchen
+    icon: mdi:silverware-variant
+    entities:
+      - camera.camera_01
+      - binary_sensor.door_window_sensor_158d000273bbe4
+
+  basement_status:
+    name: Basement
+    icon: mdi:floor-plan
+    entities:
+      - binary_sensor.door_window_sensor_158d000275f11d
+      - binary_sensor.door_window_sensor_158d000275ef5d
+
+  garage_status:
+    name: Garage
+    icon: mdi:garage
+    entities:
+      - binary_sensor.0x00158d00020dfca5_occupancy
