@@ -4,9 +4,3 @@
   name: Home
   monitored_conditions:
     - 'temperature'
-
-- platform: "mqtt"
-  state_topic: "zigbee2mqtt/Front Stormdoor"
-  availability_topic: "zigbee2mqtt/bridge/state"
-  icon: "mdi:toggle-switch"
-  value_template: "{{ value_json.click }}"
