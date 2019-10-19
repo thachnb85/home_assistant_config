@@ -226,7 +226,8 @@ devices:
     friendly_name: '0x00158d00029b063b'
     retain: false
 ```
-We can rename `0x00158d00029b063b`  to `Storm Door`
+We can rename `0x00158d00029b063b`  to `front_stormdoor`
 
 Now we can go back to Home Assistant and Add this device into its configuration.yaml.
 Wherever we want, for example in Sensors section.
+
