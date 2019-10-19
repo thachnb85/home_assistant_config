@@ -1,7 +1,12 @@
 - platform: broadlink
   host: !secret sensor_broadlink_ip
   mac: !secret sensor_broadlink_mac
-  update_interval: 30
   name: Home
   monitored_conditions:
-    - temperature
+    - 'temperature'
+
+- platform: "mqtt"
+  state_topic: "zigbee2mqtt/Front Stormdoor"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  icon: "mdi:toggle-switch"
+  value_template: "{{ value_json.click }}"
