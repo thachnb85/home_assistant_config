@@ -26,11 +26,6 @@ binary_sensor.motion_sensor_158d00020dfca1:
   icon: mdi:run-fast
   friendly_name: Living Room Motion
 
-binary_sensor.motion_sensor_158d00020dfca5:
-  assumed_state: false
-  icon: mdi:run-fast
-  friendly_name: Garage Motion
-
 binary_sensor.door_window_sensor_158d000273bb1d:
   assumed_state: false
   icon: mdi:door
@@ -50,3 +45,8 @@ binary_sensor.0x00158d00029b063b_contact:
   assumed_state: false
   icon: mdi:door
   friendly_name: Stormdoor
+
+binary_sensor.0x00158d00020dfca5_occupancy:
+  assumed_state: false
+  icon: mdi:run-fast
+  friendly_name: Garage Motion
