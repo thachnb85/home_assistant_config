@@ -1,6 +1,6 @@
 Travis CI ![alt text](https://travis-ci.org/thachnb85/home_assistant_config.svg?branch=master "Travis CI Result")
 
-# Hardware Overview
+# 1. Hardware Overview
 
 ### Home Assistant
 - Odroid XU4
@@ -116,7 +116,7 @@ In case of problems, you will be able to review the logs through journalctl:
 ```
 sudo journalctl -u homeassistant -f
 ```
-# Setup zigbee2mqtt.io
+# 2. Setup zigbee2mqtt.io
 ### Hardware
 - Grab a CC2531 usb stick
 - There are 2 kinds of firmwares: Coordinator (allows pairing), and other is Router (just routing).
@@ -195,3 +195,38 @@ mqtt:
 ```
 
 
+# 3. Adding new device
+Stop the service
+```
+systemctl stop zigbee2mqtt.service
+```
+
+Navigate to zigbee2mqtt folder then start it manually to see the log:
+```
+cd  /opt/zigbee2mqtt
+npm start
+```
+
+Now pairing new device, for example Aqara door sensor: press reset button for 5 secs, then keeps pressing reset button every second to keep it alive, now we can see from log
+
+```
+ zigbee2mqtt:info 10/18/2019, 11:05:19 PM MQTT publish: topic 'homeassistant/binary_sensor/0x00158d00029b063b/contact/config', payload '{"payload_on":false,"payload_off":true,"value_template":"{{ value_json.contact }}","device_class":"door","state_topic":"zigbee2mqtt/0x00158d00029b063b","json_attributes_topic":"zigbee2mqtt/0x00158d00029b063b","name":"0x00158d00029b063b_contact","unique_id":"0x00158d00029b063b_contact_zigbee2mqtt","device":{"identifiers":["zigbee2mqtt_0x00158d00029b063b"],"name":"0x00158d00029b063b","sw_version":"Zigbee2mqtt 1.6.0","model":"MiJia door & window contact sensor (MCCGQ01LM)","manufacturer":"Xiaomi"},"availability_topic":"zigbee2mqtt/bridge/state"}'
+  zigbee2mqtt:info 10/18/2019, 11:05:19 PM MQTT publish: topic 'homeassistant/sensor/0x00158d00029b063b/battery/config', payload '{"unit_of_measurement":"%","device_class":"battery","value_template":"{{ value_json.battery }}","state_topic":"zigbee2mqtt/0x00158d00029b063b","json_attributes_topic":"zigbee2mqtt/0x00158d00029b063b","name":"0x00158d00029b063b_battery","unique_id":"0x00158d00029b063b_battery_zigbee2mqtt","device":{"identifiers":["zigbee2mqtt_0x00158d00029b063b"],"name":"0x00158d00029b063b","sw_version":"Zigbee2mqtt 1.6.0","model":"MiJia door & window contact sensor (MCCGQ01LM)","manufacturer":"Xiaomi"},"availability_topic":"zigbee2mqtt/bridge/state"}'
+  zigbee2mqtt:info 10/18/2019, 11:05:19 PM MQTT publish: topic 'homeassistant/sensor/0x00158d00029b063b/linkquality/config', payload '{"unit_of_measurement":"-","value_template":"{{ value_json.linkquality }}","state_topic":"zigbee2mqtt/0x00158d00029b063b","json_attributes_topic":"zigbee2mqtt/0x00158d00029b063b","name":"0x00158d00029b063b_linkquality","unique_id":"0x00158d00029b063b_linkquality_zigbee2mqtt","device":{"identifiers":["zigbee2mqtt_0x00158d00029b063b"],"name":"0x00158d00029b063b","sw_version":"Zigbee2mqtt 1.6.0","model":"MiJia door & window contact sensor (MCCGQ01LM)","manufacturer":"Xiaomi"},"availability_topic":"zigbee2mqtt/bridge/state"}'
+```
+Now we can see the device information in Home Assistant web interface > Configuration > Devices
+  
+```
+nano /opt/zigbee2mqtt/data/configuration.yaml
+```
+Found
+```
+devices:
+  '0x00158d00029b063b':
+    friendly_name: '0x00158d00029b063b'
+    retain: false
+```
+We can rename `0x00158d00029b063b`  to `Storm Door`
+
+Now we can go back to Home Assistant and Add this device into its configuration.yaml.
+Wherever we want, for example in Sensors section.
