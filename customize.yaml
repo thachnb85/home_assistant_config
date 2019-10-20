@@ -31,11 +31,6 @@ binary_sensor.0x00158d000273bbe4_contact:
   icon: mdi:door
   friendly_name: Front Door
 
-binary_sensor.0x00158d000275f11d_contact:
-  assumed_state: false
-  icon: mdi:door
-  friendly_name: Kitchen Door
-
 binary_sensor.0x00158d000273bb1d_contact:
   assumed_state: false
   icon: mdi:door
@@ -44,19 +39,24 @@ binary_sensor.0x00158d000273bb1d_contact:
 binary_sensor.0x00158d00029b063b_contact:
   assumed_state: false
   icon: mdi:door
-  friendly_name: To Garage Door
+  friendly_name: Living to Garage Door
+
+binary_sensor.0x00158d000275f11d_contact:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Kitchen Door
 
 binary_sensor.0x00158d00020dfca5_occupancy:
   assumed_state: false
   icon: mdi:run-fast
   friendly_name: Garage Motion
 
-binary_sensor.0x00158d00036d12cc_occupancy:
-  assumed_state: false
-  icon: mdi:run-fast
-  friendly_name: Living Room Motion
-
 binary_sensor.0x00158d00020dfca1_occupancy:
   assumed_state: false
   icon: mdi:run-fast
   friendly_name: Basement Motion
+
+binary_sensor.0x00158d00029bf0c3_contact:
+  assumed_state: false
+  icon: mdi:door
+  friendly_name: Garage Door
