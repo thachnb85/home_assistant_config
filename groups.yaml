@@ -16,12 +16,6 @@
       - switch.broadlink_tv_vol_up
       - switch.broadlink_tv_vol_down
 
-  weather_status:
-    view: true
-    name: Weather
-    entities:
-      - sun.sun
-
   living_status:
     name: Living Room
     entities:
