@@ -12,12 +12,16 @@ homeassistant:
   time_zone: UTC
   # Customization file
   customize: !include customize.yaml
+  packages: !include_dir_named packages
 
 # Show links to resources in log and frontend
 # introduction:
 
 # Enables the frontend
 frontend:
+
+lovelace:
+  mode: yaml
 
 # Enables configuration UI
 config:
@@ -71,16 +75,9 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-# Xiaomi Aqara Gateway
-#xiaomi_aqara:
-#  discovery_retry: 5
-#  gateways:
-#    - key: !secret aqara_key
-
-# MQTT
 mqtt:
   discovery: true
-  broker: 10.0.0.234  # Remove if you want to use builtin-in MQTT broker
+  broker: 10.0.0.234
   birth_message:
     topic: 'hass/status'
     payload: 'online'
