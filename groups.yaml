@@ -6,6 +6,7 @@
       - group.kitchen_status
       - group.basement_status
       - group.garage_status
+      - group.mqtt_status
 
   tv_switch:
     view: true
@@ -46,3 +47,18 @@
     entities:
       - binary_sensor.0x00158d00029bf0c3_contact
       - binary_sensor.0x00158d00020dfca5_occupancy
+
+  mqtt_status:
+    name: Zigbee2mqtt Status
+    icon: mdi:chip
+    entities:
+      - sensor.zigbee2mqtt_bridge_state
+      - sensor.zigbee2mqtt_version
+      - sensor.coordinator_version
+      - input_select.zigbee2mqtt_log_level
+      - switch.zigbee2mqtt_main_join
+      - timer.zigbee_permit_join
+      - input_text.zigbee2mqtt_old_name
+      - input_text.zigbee2mqtt_new_name
+      - script.zigbee2mqtt_rename
+      - input_text.zigbee2mqtt_remove
