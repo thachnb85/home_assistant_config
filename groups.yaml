@@ -8,14 +8,21 @@
       - group.garage_status
       - group.mqtt_status
 
-  tv_switch:
+  tv_switch_view:
     view: true
-    name: Roku TV
+    icon: mdi:remote
     entities:
       - switch.broadlink_tv_power
       - switch.broadlink_tv_netflix
       - switch.broadlink_tv_vol_up
       - switch.broadlink_tv_vol_down
+
+  cameras_view:
+    view: true
+    name: Kitchen Camera
+    icon: mdi:cctv
+    entities:
+      - camera.camera_01
 
   living_status:
     name: Living Room
@@ -31,7 +38,6 @@
     name: Kitchen
     icon: mdi:silverware-variant
     entities:
-      - camera.camera_01
       - binary_sensor.0x00158d000275f11d_contact
 
   basement_status:
