@@ -31,7 +31,7 @@
       - binary_sensor.0x00158d000273bbe4_contact
       - binary_sensor.0x00158d00029b063b_contact
       - binary_sensor.0x00158d00036d12cc_occupancy
-      - switch.broadlink_switch1
+      - switch.broadlink_switch2
       - sensor.home_temperature
 
   kitchen_status:
@@ -53,7 +53,7 @@
     entities:
       - binary_sensor.0x00158d00029bf0c3_contact
       - binary_sensor.0x00158d00020dfca5_occupancy
-      - switch.broadlink_switch2
+      - switch.broadlink_switch1
 
   garden_status:
     name: Garden
