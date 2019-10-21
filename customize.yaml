@@ -8,13 +8,15 @@ sensor.home_temperature:
   friendly_name: Temperature
   icon: mdi:oil-temperature
 
+switch.broadlink_switch2:
+  assumed_state: false
+  icon: mdi:lava-lamp
+  friendly_name: Living Floor Light
+
 switch.broadlink_switch1:
   assumed_state: false
   icon: mdi:ceiling-light
-
-switch.broadlink_switch2:
-  assumed_state: false
-  icon: mdi:pine-tree
+  friendly_name: Garage Workshop Light
 
 binary_sensor.0x00158d000275ef5d_contact:
   assumed_state: false
