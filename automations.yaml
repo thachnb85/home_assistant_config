@@ -1,1 +1,63 @@
-[]
+- id: '1571592300440'
+  alias: LivingRoomLightOnMotionDetected
+  description: LivingRoomLightOnMotionDetected
+  trigger:
+  - device_id: b5368921f7764adbb90ed97c5dc4c228
+    domain: binary_sensor
+    entity_id: binary_sensor.0x00158d00036d12cc_occupancy
+    platform: device
+    type: motion
+  condition:
+  - after: '18:30'
+    before: '6:00'
+    condition: time
+  action:
+  - data:
+      entity_id: switch.broadlink_switch1
+    service: switch.turn_on
+- id: '1571592374526'
+  alias: LivingRoomLightOffMotionClear
+  description: LivingRoomLightOffMotionClear
+  trigger:
+  - device_id: b5368921f7764adbb90ed97c5dc4c228
+    domain: binary_sensor
+    entity_id: binary_sensor.0x00158d00036d12cc_occupancy
+    platform: device
+    type: no_motion
+  condition:
+  - after: '18:30'
+    before: '7:00'
+    condition: time
+  action:
+  - data:
+      entity_id: switch.broadlink_switch1
+    service: switch.turn_off
+- id: '1571636319874'
+  alias: GarageLightOnMotionDetected
+  description: GarageLightOnMotionDetected
+  trigger:
+  - device_id: 2611284bccb14c53a503444bdbd93f5d
+    domain: binary_sensor
+    entity_id: binary_sensor.0x00158d00020dfca5_occupancy
+    platform: device
+    type: motion
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: switch.broadlink_switch2
+    service: switch.turn_on
+- id: '1571636443457'
+  alias: GarageLightOffMotionClear
+  description: GarageLightOffMotionClear
+  trigger:
+  - device_id: 2611284bccb14c53a503444bdbd93f5d
+    domain: binary_sensor
+    entity_id: binary_sensor.0x00158d00020dfca5_occupancy
+    platform: device
+    type: no_motion
+  condition: []
+  action:
+  - data:
+      entity_id: switch.broadlink_switch2
+    service: switch.turn_off
