@@ -6,6 +6,7 @@
       - group.kitchen_status
       - group.basement_status
       - group.garage_status
+      - group.garden_status
       - group.mqtt_status
 
   tv_switch_view:
@@ -53,6 +54,12 @@
     entities:
       - binary_sensor.0x00158d00029bf0c3_contact
       - binary_sensor.0x00158d00020dfca5_occupancy
+
+  garden_status:
+    name: Garden
+    icon: mdi:door
+    entities:
+      - binary_sensor.0x00158d000275ef5d_contact
 
   mqtt_status:
     name: Zigbee2mqtt Status
