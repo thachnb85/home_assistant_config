@@ -62,3 +62,29 @@ binary_sensor.0x00158d00029bf0c3_contact:
   assumed_state: false
   icon: mdi:door
   friendly_name: Garage Door
+
+switch.broadlink_lamp_socket_4:
+  assumed_state: false
+  icon: mdi:lightbulb-outline
+  friendly_name: Front Porch
+  
+switch.broadlink_lamp_socket_3:
+  assumed_state: false
+  icon: mdi:lightbulb-outline
+  friendly_name: Garage Left Porch
+  
+switch.broadlink_lamp_socket_2:
+  assumed_state: false
+  icon: mdi:lightbulb-outline
+  friendly_name: Garage Right Porch
+  
+switch.broadlink_lamp_socket_1:
+  assumed_state: false
+  icon: mdi:lightbulb-outline
+  friendly_name: Patio Porch
+ 
+switch.broadlink_all_lamp_socket:
+  assumed_state: false
+  icon: mdi:lightbulb-outline
+  friendly_name: All Outdoor Lights
+  
