@@ -29,7 +29,7 @@
     switches:
       broadlink_lamp_socket_1:
         command_on: 'sgcyAAcQBxAHEAcQBxEHEAcQEgUHEBIFBxASBQcQEgUHEBIFBxAHEBIFEgUHEAcQEgUSBQeqAAAAAAAA'
-        command_off: 'sggyAAcQBxAHEAcQBxAHEAcQEgUHEBIFBxASBQcQEgUHEBIFBxAHEBIFEgUSBRIFBxAHEAeqAAAAAAAA'
+        command_off: 'sg4yAAcQBxAHEAcQBxAHEAcQEgUHEBIFBxASBgcQEgUHEBIFBxAHERIGEgUSBRIFBxAHEAepAAAAAAAA'
   - platform: broadlink
     host: !secret sensor_broadlink_ip
     mac: !secret sensor_broadlink_mac
