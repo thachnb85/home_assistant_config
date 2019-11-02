@@ -240,3 +240,31 @@ binary_sensor.0x00158d00029b063b_contact:
 ```
 Then use the entity name: `binary_sensor.0x00158d00029b063b_contact` to confg HA UI.
 
+# 4. Force Update Sensors
+
+created folder /config/python_scripts
+added python_script: to configuration.yaml
+Created script: force_update_state.py
+
+````
+#pass entity_id as argument from call
+sensor = data.get('entity_id')
+
+#read old state
+oldstate = hass.states.get(sensor)
+
+#write old state to entity and force update to record database
+hass.states.set(sensor, oldstate.state , oldstate.attributes, force_update=True)
+````
+
+Then create automation for entity we need to update, for example alarm sensor
+```
+- alias: 'Uppdate alarm sensor'
+  trigger:
+    platform: time_pattern
+    seconds: '/4'
+  action:  
+    - data:
+        entity_id: sensor.alarm_active
+      service: python_script.force_update_state
+```
