@@ -21,7 +21,7 @@ switch.broadlink_switch1:
 binary_sensor.0x00158d000275ef5d_contact:
   assumed_state: false
   icon: mdi:door
-  friendly_name: Backgate
+  friendly_name: Living To Garage Door
 
 binary_sensor.0x00158d00036d12cc_occupancy:
   assumed_state: false
@@ -41,7 +41,7 @@ binary_sensor.0x00158d000273bb1d_contact:
 binary_sensor.0x00158d00029b063b_contact:
   assumed_state: false
   icon: mdi:door
-  friendly_name: Living to Garage Door
+  friendly_name: Backgate
 
 binary_sensor.0x00158d000275f11d_contact:
   assumed_state: false
@@ -67,24 +67,23 @@ switch.broadlink_lamp_socket_4:
   assumed_state: false
   icon: mdi:lightbulb-outline
   friendly_name: Front Porch
-  
+
 switch.broadlink_lamp_socket_3:
   assumed_state: false
   icon: mdi:lightbulb-outline
   friendly_name: Garage Left Porch
-  
+
 switch.broadlink_lamp_socket_2:
   assumed_state: false
   icon: mdi:lightbulb-outline
   friendly_name: Garage Right Porch
-  
+
 switch.broadlink_lamp_socket_1:
   assumed_state: false
   icon: mdi:lightbulb-outline
   friendly_name: Patio Porch
- 
+
 switch.broadlink_all_lamp_socket:
   assumed_state: false
   icon: mdi:lightbulb-outline
   friendly_name: All Outdoor Lights
-  
