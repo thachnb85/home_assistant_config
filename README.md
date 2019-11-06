@@ -268,3 +268,18 @@ Then create automation for entity we need to update, for example alarm sensor
         entity_id: sensor.alarm_active
       service: python_script.force_update_state
 ```
+
+# 5. Advanced Configuration
+- Tracking state changes of a sensor: https://community.home-assistant.io/t/timestamp-of-when-a-sensor-switches-to-specific-state/73551/2
+
+By adding new sensor sql which querries directly from database
+```
+- platform: sql
+  queries:
+    - name: front door last closed
+      query: "select last_changed from states where entity_id = 'binary_sensor.0x00158d000273bbe4_contact' and state = 'on' order by last_changed desc;"
+      column: 'last_changed'
+      value_template: "{{ as_timestamp(value + 'Z') | timestamp_custom('%a %b %-d %-I:%M%p')}}"
+```
+Notice that `limit 1 ` is automatically added by HA.
+Adding 'Z' for converting to local time zone.
