@@ -11,7 +11,6 @@
       - group.mqtt_status
 
   tv_switch_view:
-    view: true
     icon: mdi:remote
     entities:
       - switch.broadlink_tv_power
@@ -30,22 +29,25 @@
     name: Living Room
     entities:
       - binary_sensor.0x00158d000273bbe4_contact
-      - binary_sensor.0x00158d00029b063b_contact
+      - sensor.front_door_last_opened
       - binary_sensor.0x00158d00036d12cc_occupancy
+      - binary_sensor.0x00158d000275ef5d_contact
+      - sensor.living_to_garage_door_last_opened
       - switch.broadlink_switch2
-      - sensor.home_temperature
 
   kitchen_status:
     name: Kitchen
     icon: mdi:silverware-variant
     entities:
       - binary_sensor.0x00158d000275f11d_contact
+      - sensor.kitchen_door_last_opened
 
   basement_status:
     name: Basement
     icon: mdi:floor-plan
     entities:
       - binary_sensor.0x00158d000273bb1d_contact
+      - sensor.basement_door_last_opened
       - binary_sensor.0x00158d00020dfca1_occupancy
 
   garage_status:
@@ -53,16 +55,21 @@
     icon: mdi:garage
     entities:
       - binary_sensor.0x00158d00029bf0c3_contact
+      - sensor.garage_door_last_opened
       - binary_sensor.0x00158d00020dfca5_occupancy
       - switch.broadlink_switch1
+      - sensor.home_temperature
 
   garden_status:
     name: Garden
     icon: mdi:door
     entities:
-      - binary_sensor.0x00158d000275ef5d_contact
+      - binary_sensor.0x00158d00029b063b_contact
+      - sensor.backgate_last_opened
 
   outdoor_lights_status:
+    view: true
+    icon: mdi:remote
     name: Outdoor Lights
     entities:
       - switch.broadlink_lamp_socket_4
@@ -70,7 +77,7 @@
       - switch.broadlink_lamp_socket_2
       - switch.broadlink_lamp_socket_1
       - switch.broadlink_all_lamp_socket
-      
+
   mqtt_status:
     name: Zigbee2mqtt Status
     icon: mdi:chip
