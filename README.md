@@ -283,3 +283,35 @@ By adding new sensor sql which querries directly from database
 ```
 Notice that `limit 1 ` is automatically added by HA.
 Adding 'Z' for converting to local time zone.
+
+
+# 6. Trouble Shooting
+There are most common issues when I update HA:
+### Update ffmpeg
+Simple solution is to install from source, for example version 3.2 is required.
+```
+sudo apt -y install \
+    autoconf \
+    automake \
+    build-essential \
+    cmake \
+    libass-dev \
+    libfreetype6-dev \
+    libjpeg-dev \
+    libtheora-dev \
+    libtool \
+    libvorbis-dev \
+    libx264-dev \
+    pkg-config \
+    wget \
+    yasm \
+    zlib1g-dev
+
+wget http://ffmpeg.org/releases/ffmpeg-3.2.tar.bz2
+tar -xjf ffmpeg-3.2.tar.bz2
+cd ffmpeg-3.2
+
+./configure --disable-static --enable-shared --disable-doc
+make
+sudo make install
+```
