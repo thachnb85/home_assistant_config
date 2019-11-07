@@ -1,0 +1,123 @@
+title: Smoothstone Home
+views:
+  - title: Home
+    cards:
+      - type: entities
+        title: Living Room
+        entities:
+          - entity: binary_sensor.0x00158d000273bbe4_contact
+            name: Front Door
+            secondary_info: last-changed
+          - entity: sensor.front_door_last_opened
+            name: Last Opened
+            icon: mdi:history
+          - type: divider
+          - entity: binary_sensor.0x00158d000275ef5d_contact
+            name: Living To Garage Door
+            secondary_info: last-changed
+          - entity: sensor.living_to_garage_door_last_opened
+            name: Last Opened
+            icon: mdi:history
+          - type: divider
+          - entity: binary_sensor.0x00158d00036d12cc_occupancy
+            name: Living Room Motion
+            icon: mdi:run-fast
+          - type: divider
+          - entity: switch.broadlink_switch2
+            name: Living Floor Light
+            icon: mdi:lava-lamp
+
+      - type: entities
+        title: Basement
+        entities:
+          - entity: binary_sensor.0x00158d000273bb1d_contact
+            name: Basement Door
+            secondary_info: last-changed
+          - entity: sensor.basement_door_last_opened
+            name: Last Opened
+            icon: mdi:history
+          - type: divider
+          - entity: binary_sensor.0x00158d00020dfca1_occupancy
+            name: Basement Motion
+            icon: mdi:run-fast
+
+      - type: entities
+        title: Garden
+        entities:
+          - entity: binary_sensor.0x00158d00029b063b_contact
+            name: Backgate
+            secondary_info: last-changed
+          - entity: sensor.backgate_last_opened
+            name: Last Opened
+            icon: mdi:history
+            
+      - type: entities
+        title: Kitchen
+        entities:
+          - entity: binary_sensor.0x00158d000275f11d_contact
+            name: Kitchen Door
+            secondary_info: last-changed
+          - entity: sensor.kitchen_door_last_opened
+            name: Last Opened
+            icon: mdi:history
+            
+      - type: entities
+        title: Garage
+        entities:
+          - entity: binary_sensor.0x00158d00029bf0c3_contact
+            name: Garage Door
+            secondary_info: last-changed
+          - entity: sensor.garage_door_last_opened
+            name: Last Opened
+            icon: mdi:history
+          - type: divider
+          - entity: binary_sensor.0x00158d00020dfca5_occupancy
+            icon: mdi:run-fast
+            name: Garage Motion
+          - entity: switch.broadlink_switch1
+            name: Garage Workshop Light
+            icon: mdi:ceiling-light
+          - entity: sensor.home_temperature
+            name: Garage Temp
+            icon: mdi:oil-temperature
+
+  - title: Switches
+    cards:
+      - type: entities
+        title: RF Switches
+        entities:
+          - entity: switch.broadlink_lamp_socket_4
+            icon: mdi:lightbulb-outline
+            name: Front Porch
+          - type: divider
+          - entity: switch.broadlink_lamp_socket_3
+            icon: mdi:lightbulb-outline
+            name: Garage Left Porch
+          - entity: switch.broadlink_lamp_socket_2
+            icon: mdi:lightbulb-outline
+            name: Garage Right Porch
+          - type: divider
+          - entity: switch.broadlink_lamp_socket_1
+            icon: mdi:lightbulb-outline
+            name: Patio Porch
+          - entity: switch.broadlink_all_lamp_socket
+            icon: mdi:lightbulb-outline
+            name: All Outdoor Lights
+
+  - title: MQTT
+    cards:
+      - type: entities
+        title: Zigbee2MQTT Control
+        entities:
+          - sensor.zigbee2mqtt_bridge_state
+          - sensor.zigbee2mqtt_version
+          - sensor.coordinator_version
+          - input_select.zigbee2mqtt_log_level
+          - switch.zigbee2mqtt_main_join
+          - timer.zigbee_permit_join
+          - input_text.zigbee2mqtt_old_name
+          - input_text.zigbee2mqtt_new_name
+          - script.zigbee2mqtt_rename
+          - input_text.zigbee2mqtt_remove
+
+
