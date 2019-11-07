@@ -315,3 +315,17 @@ cd ffmpeg-3.2
 make
 sudo make install
 ```
+
+### Timezone
+HA should be configured with correct timezone for automations working properly.
+- In configuration.yaml, check time_zone file, should be full name: America/Toronto
+- If we create sensor template from SQL, the time is UTC but it doesn't have `+00:00` at the end, need to append and convert to local time zone, for example:
+```
+- platform: sql
+  scan_interval: 2
+  queries:
+    - name: front door last opened
+      query: "select last_changed from states where entity_id = 'binary_sensor.0x00158d000273bbe4_contact' and state = 'on' order by last_changed desc;"
+      column: 'last_changed'
+      value_template: "{{ as_timestamp(value~'+00:00') | timestamp_custom('%a %b %-d %-I:%M%p')}}"
+```
