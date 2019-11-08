@@ -1,4 +1,9 @@
   - platform: generic
     still_image_url: !secret camera_odroid_url
-    name: "Camera 01"
-    scan_interval: 1 
+    name: "Kitchen CCTV"
+    scan_interval: 1
+
+  - platform: generic
+    still_image_url: !secret camera_odroid_2_url
+    name: "Stove CCTV"
+    scan_interval: 1
