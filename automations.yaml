@@ -1,6 +1,5 @@
 - id: '1571592300440'
   alias: LivingRoomLightOnMotionDetected
-  description: ''
   trigger:
   - device_id: b5368921f7764adbb90ed97c5dc4c228
     domain: binary_sensor
@@ -14,7 +13,6 @@
     service: switch.turn_on
 - id: '1571592374526'
   alias: LivingRoomLightOffMotionClear
-  description: ''
   trigger:
   - device_id: b5368921f7764adbb90ed97c5dc4c228
     domain: binary_sensor
@@ -28,7 +26,6 @@
     service: switch.turn_off
 - id: '1571636319874'
   alias: GarageLightOnMotionDetected
-  description: ''
   trigger:
   - device_id: 2611284bccb14c53a503444bdbd93f5d
     domain: binary_sensor
@@ -43,7 +40,6 @@
     service: switch.turn_on
 - id: '1571636443457'
   alias: GarageLightOffMotionClear
-  description: ''
   trigger:
   - device_id: 2611284bccb14c53a503444bdbd93f5d
     domain: binary_sensor
@@ -57,7 +53,6 @@
     service: switch.turn_off
 - id: '1572961796271'
   alias: FrontPorchAutoOff
-  description: ''
   trigger:
   - at: 07:00:00
     platform: time
@@ -76,7 +71,6 @@
     service: switch.turn_off
 - id: '1573184135138'
   alias: FrontPorchAutoOn
-  description: ''
   trigger:
   - at: '18:00:00'
     platform: time
