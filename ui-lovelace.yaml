@@ -163,7 +163,14 @@ views:
           - entity: switch.broadlink_all_lamp_socket
             icon: mdi:lightbulb-outline
             name: All Outdoor Lights
-
+  - title: Camera
+    cards:
+      - type: picture-glance
+        title: Kitchen CCTV
+        camera_image: camera.camera_01
+        camera_view: live
+        entities: []
+        
   - title: MQTT
     cards:
       - type: entities
