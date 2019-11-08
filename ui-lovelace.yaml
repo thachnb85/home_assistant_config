@@ -43,6 +43,9 @@ views:
           - entity: binary_sensor.0x00158d00036d12cc_occupancy
             name: Living Room Motion
             icon: mdi:run-fast
+          - entity: sensor.living_last_motion
+            name: Last Motion
+            icon: mdi:history
           - type: divider
           - entity: switch.broadlink_switch2
             name: Living Floor Light
@@ -61,6 +64,9 @@ views:
           - entity: binary_sensor.0x00158d00020dfca1_occupancy
             name: Basement Motion
             icon: mdi:run-fast
+          - entity: sensor.basement_last_motion
+            name: Last Motion
+            icon: mdi:history
 
       - type: entities
         title: Garden
@@ -95,11 +101,15 @@ views:
           - entity: binary_sensor.0x00158d00020dfca5_occupancy
             icon: mdi:run-fast
             name: Garage Motion
+          - entity: sensor.garage_last_motion
+            name: Last Motion
+            icon: mdi:history
+          - type: divider  
           - entity: switch.broadlink_switch1
             name: Garage Workshop Light
             icon: mdi:ceiling-light
           - entity: sensor.home_temperature
-            name: Garage Temp
+            name: Garage Temperature
             icon: mdi:oil-temperature
 
   - title: Switches
