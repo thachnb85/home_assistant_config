@@ -2,6 +2,27 @@ title: Smoothstone Home
 views:
   - title: Home
     cards:
+      - type: horizontal-stack
+        title: Switches
+        cards:
+          - type: entity-button
+            entity: switch.broadlink_switch2
+            name: Living Floor Light
+            icon: mdi:lava-lamp
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_switch2
+          - type: entity-button
+            entity: switch.broadlink_switch1
+            name: Garage Workshop Light
+            icon: mdi:ceiling-light
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_switch1
       - type: entities
         title: Living Room
         entities:
@@ -50,7 +71,7 @@ views:
           - entity: sensor.backgate_last_opened
             name: Last Opened
             icon: mdi:history
-            
+
       - type: entities
         title: Kitchen
         entities:
@@ -60,7 +81,7 @@ views:
           - entity: sensor.kitchen_door_last_opened
             name: Last Opened
             icon: mdi:history
-            
+
       - type: entities
         title: Garage
         entities:
@@ -83,6 +104,45 @@ views:
 
   - title: Switches
     cards:
+      - type: horizontal-stack
+        title: Outdoor Switches
+        cards:
+          - type: entity-button
+            entity: switch.broadlink_lamp_socket_4
+            icon: mdi:lightbulb-outline
+            name: Front Porch
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_lamp_socket_4
+          - type: entity-button
+            entity: switch.broadlink_lamp_socket_3
+            icon: mdi:lightbulb-outline
+            name: Garage Left Porch
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_lamp_socket_3
+          - type: entity-button
+            entity: switch.broadlink_lamp_socket_2
+            icon: mdi:lightbulb-outline
+            name: Garage Right Porch
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_lamp_socket_2
+          - type: entity-button
+            entity: switch.broadlink_all_lamp_socket
+            icon: mdi:lightbulb-outline
+            name: All Outdoor Lights
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.broadlink_all_lamp_socket
       - type: entities
         title: RF Switches
         entities:
@@ -119,5 +179,3 @@ views:
           - input_text.zigbee2mqtt_new_name
           - script.zigbee2mqtt_rename
           - input_text.zigbee2mqtt_remove
-
-
