@@ -43,7 +43,7 @@ views:
           - entity: binary_sensor.0x00158d00036d12cc_occupancy
             name: Living Room Motion
             icon: mdi:run-fast
-          - entity: sensor.living_last_motion
+          - entity: sensor.living_room_last_motion
             name: Last Motion
             icon: mdi:history
           - type: divider
