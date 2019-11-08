@@ -1,37 +1,34 @@
 - id: '1571592300440'
   alias: LivingRoomLightOnMotionDetected
+  description: ''
   trigger:
   - device_id: b5368921f7764adbb90ed97c5dc4c228
     domain: binary_sensor
     entity_id: binary_sensor.0x00158d00036d12cc_occupancy
     platform: device
     type: motion
-  condition:
-  - after: '18:30'
-    before: '6:00'
-    condition: time
+  condition: []
   action:
   - data:
       entity_id: switch.broadlink_switch2
     service: switch.turn_on
 - id: '1571592374526'
   alias: LivingRoomLightOffMotionClear
+  description: ''
   trigger:
   - device_id: b5368921f7764adbb90ed97c5dc4c228
     domain: binary_sensor
     entity_id: binary_sensor.0x00158d00036d12cc_occupancy
     platform: device
     type: no_motion
-  condition:
-  - after: '18:30'
-    before: '7:00'
-    condition: time
+  condition: []
   action:
   - data:
       entity_id: switch.broadlink_switch2
     service: switch.turn_off
 - id: '1571636319874'
   alias: GarageLightOnMotionDetected
+  description: ''
   trigger:
   - device_id: 2611284bccb14c53a503444bdbd93f5d
     domain: binary_sensor
@@ -46,6 +43,7 @@
     service: switch.turn_on
 - id: '1571636443457'
   alias: GarageLightOffMotionClear
+  description: ''
   trigger:
   - device_id: 2611284bccb14c53a503444bdbd93f5d
     domain: binary_sensor
@@ -57,3 +55,41 @@
   - data:
       entity_id: switch.broadlink_switch1
     service: switch.turn_off
+- id: '1572961796271'
+  alias: FrontPorchAutoOff
+  description: ''
+  trigger:
+  - at: 07:00:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_off
+  - delay: 00:00:10
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_off
+  - delay: 00:00:10
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_off
+- id: '1573184135138'
+  alias: FrontPorchAutoOn
+  description: ''
+  trigger:
+  - at: '18:00:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_on
+  - delay: 00:00:10
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_on
+  - delay: 00:00:10
+  - data:
+      entity_id: switch.broadlink_lamp_socket_4
+    service: switch.turn_on
