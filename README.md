@@ -231,13 +231,6 @@ We can rename `0x00158d00029b063b`  to `front_stormdoor`, this is the name for e
 Now we can go back to Home Assistant and Add this device into its configuration.yaml.
 Wherever we want, for example in Sensors section.
 
-Adding into `customize.yaml`
-```
-binary_sensor.0x00158d00029b063b_contact:
-  assumed_state: false
-  icon: mdi:door
-  friendly_name: Stormdoor
-```
 Then use the entity name: `binary_sensor.0x00158d00029b063b_contact` to confg HA UI.
 
 # 4. Force Update Sensors
