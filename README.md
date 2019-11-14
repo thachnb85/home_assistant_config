@@ -284,8 +284,41 @@ By adding new sensor sql which querries directly from database
 Notice that `limit 1 ` is automatically added by HA.
 Adding 'Z' for converting to local time zone.
 
+# 6. How to remove an entity
+Sometimes you want to remove a sensor, and repair it, for example connect to the router instead of the coordinator
 
-# 6. Trouble Shooting
+
+1/ Find the device ID from Configuration> Integrations > MQTT: configuration.yaml
+then remove devices from Configuration Entity Registry
+
+2/ ssh into home assistant > stop home assistant
+
+3/ Remove device from bridge
+```
+mosquitto_pub -h 10.0.0.234 -t "zigbee2mqtt/bridge/config/remove" -m "0x00158d00029bf0c3"
+```
+
+List all topics:
+```
+mosquitto_sub -h 10.0.0.234 -v -d -R -t '#' | grep 0x00158d00029bf0c3
+```
+
+Then remove the configs:
+```
+mosquitto_pub -h 10.0.0.234 -r -n -t "homeassistant/binary_sensor/0x00158d00029bf0c3/contact/config"
+mosquitto_pub -h 10.0.0.234 -r -n -t "homeassistant/sensor/0x00158d00029bf0c3/battery/config"
+mosquitto_pub -h 10.0.0.234 -r -n -t "homeassistant/sensor/0x00158d00029bf0c3/linkquality/config"
+```
+4/ Remove device from .storage/core.device_registry
+```
+cat .storage/core.device_registry | grep 0x00158d00029bf0c3
+```
+Then find and remove entity 0x00158d00029bf0c3 if has
+```
+nano .storage/core.device_registry
+```
+
+# 7. Trouble Shooting
 There are most common issues when I update HA:
 ### Update ffmpeg
 Simple solution is to install from source, for example version 3.2 is required.
