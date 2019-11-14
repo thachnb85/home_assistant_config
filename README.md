@@ -1,6 +1,6 @@
 Travis CI ![alt text](https://travis-ci.org/thachnb85/home_assistant_config.svg?branch=master "Travis CI Result")
 
-![Screenshot][https://github.com/thachnb85/home_assistant_config/blob/master/HA.png =480px]
+(https://github.com/thachnb85/home_assistant_config/blob/master/HA.png =480px)
 
 # 1. Hardware Overview
 
