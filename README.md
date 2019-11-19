@@ -20,6 +20,7 @@ Travis CI ![alt text](https://travis-ci.org/thachnb85/home_assistant_config.svg?
 ### Cameras
 - Raspberry with USB Camera
 - MotionEye enabled with streaming option.
+- Wyze V2 with rtsp firmware: https://support.wyzecam.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP
 
 # Installation Guide
 
