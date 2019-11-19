@@ -186,7 +186,12 @@ views:
         camera_image: camera.stove_cctv
         camera_view: live
         entities: []
-        
+      - type: picture-glance
+        title: Backyard CCTV
+        camera_image: camera.backyard
+        camera_view: live
+        entities: []
+
   - title: MQTT
     cards:
       - type: entities
