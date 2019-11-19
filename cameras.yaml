@@ -7,3 +7,8 @@
     still_image_url: !secret camera_odroid_2_url
     name: "Stove CCTV"
     scan_interval: 1
+ 
+  - platform: ffmpeg
+    name: "Backyard"
+    input: !secret camera_wyze1_url
+
