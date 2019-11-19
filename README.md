@@ -344,6 +344,25 @@ make
 sudo make install
 ```
 
+Test if we can see the lib copied to /usr/local/lib by:
+```
+sudo find / -name libavdevice.so.*
+```
+
+We need to update library path:
+```
+nano /etc/ld.so.conf
+```
+
+Adding this line:
+```
+/usr/local/lib
+```
+Then run
+```
+sudo ldconfig
+```
+
 ### Timezone
 HA should be configured with correct timezone for automations working properly.
 - In configuration.yaml, check time_zone file, should be full name: America/Toronto
