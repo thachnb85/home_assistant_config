@@ -40,7 +40,7 @@ views:
             name: Last Opened
             icon: mdi:history
           - type: divider
-          - entity: binary_sensor.0x00158d00036d12cc_occupancy
+          - entity: binary_sensor.living_motion_occupancy
             name: Living Room Motion
             icon: mdi:run-fast
           - entity: sensor.living_room_last_motion
@@ -50,6 +50,9 @@ views:
           - entity: switch.broadlink_switch2
             name: Living Floor Light
             icon: mdi:lava-lamp
+          - entity: sensor.home_temperature
+            name: Home Temperature
+            icon: mdi:oil-temperature
 
       - type: entities
         title: Basement
@@ -79,6 +82,16 @@ views:
             icon: mdi:history
 
       - type: entities
+        title: Master Room
+        entities:
+          - entity: binary_sensor.0x00158d0003faf12c_occupancy
+            icon: mdi:run-fast
+            name: Master Motion
+          - entity: sensor.backgate_last_motion
+            name: Last Motion
+            icon: mdi:history
+
+      - type: entities
         title: Kitchen
         entities:
           - entity: binary_sensor.0x00158d000275f11d_contact
@@ -86,6 +99,13 @@ views:
             secondary_info: last-changed
           - entity: sensor.kitchen_door_last_opened
             name: Last Opened
+            icon: mdi:history
+          - type: divider
+          - entity: binary_sensor.0x00158d00040590bd_occupancy
+            icon: mdi:run-fast
+            name: Kitchen Motion
+          - entity: sensor.kitchen_last_motion
+            name: Last Motion
             icon: mdi:history
 
       - type: entities
@@ -98,19 +118,19 @@ views:
             name: Last Opened
             icon: mdi:history
           - type: divider
-          - entity: binary_sensor.0x00158d00020dfca5_occupancy
-            icon: mdi:run-fast
-            name: Garage Motion
-          - entity: sensor.garage_last_motion
-            name: Last Motion
-            icon: mdi:history
-          - type: divider  
           - entity: switch.broadlink_switch1
             name: Garage Workshop Light
             icon: mdi:ceiling-light
-          - entity: sensor.home_temperature
-            name: Garage Temperature
-            icon: mdi:oil-temperature
+
+      - type: entities
+        title: Workshop Basement
+        entities:
+          - entity: binary_sensor.garage_motion_occupancy
+            icon: mdi:run-fast
+            name: Workshop Motion
+          - entity: sensor.garage_last_motion
+            name: Last Motion
+            icon: mdi:history
 
   - title: Switches
     cards:
@@ -173,7 +193,7 @@ views:
           - entity: switch.broadlink_all_lamp_socket
             icon: mdi:lightbulb-outline
             name: All Outdoor Lights
-            
+
   - title: Camera
     cards:
       - type: picture-glance
