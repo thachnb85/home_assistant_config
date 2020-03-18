@@ -92,7 +92,7 @@ WantedBy=multi-user.target
 
 Try to run homeassistant first:
 ```
-/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant
+/srv/homeassistant/bin/hass -c "/home/homeassistant/.homeassistant"
 ```
 
 Then start it:
