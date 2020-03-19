@@ -389,5 +389,6 @@ HA should be configured with correct timezone for automations working properly.
 - Delete database.db in data folder to get fresh start.
 
 5. Repairing Router first, press SW2 button 5 seconds, then move it closer to the Coordinator, light off then change to slow flashing every 3 secs, check logs to make sure it connected.
+http://ptvo.info/cc2531-based-router-firmware-136/
 
 6. For repairing sensors, press reset on each sensors.
