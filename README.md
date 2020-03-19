@@ -377,3 +377,17 @@ HA should be configured with correct timezone for automations working properly.
       column: 'last_changed'
       value_template: "{{ as_timestamp(value~'+00:00') | timestamp_custom('%a %b %-d %-I:%M%p')}}"
 ```
+
+# 8. Migration to new hardware guide
+1. Install HA, MQTT, Zigbee2MQTT
+
+2. Fixes config files to use new IP of MQTT
+
+3. Copy the whole HA config: /home/homeassistant/.homeassistant to new server, dont forget to chmod and chown to homeassistant user.
+
+4. Copy the whole Zigbee2Mqtt config: /opt/zigbee2mqtt/data to new server, dont forget to chmod and chown to homeassistant user.
+- Delete database.db in data folder to get fresh start.
+
+5. Repairing Router first, press SW2 button 5 seconds, then move it closer to the Coordinator, light off then change to slow flashing every 3 secs, check logs to make sure it connected.
+
+6. For repairing sensors, press reset on each sensors.
