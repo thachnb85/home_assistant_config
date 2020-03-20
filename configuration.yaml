@@ -16,11 +16,11 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 127.0.0.1
-        - 10.0.0.0/24
+        - !secret trusted_network
         - !secret vpn_network
       trusted_users:
         127.0.0.1: !secret user_id
-        10.0.0.0/24: !secret user_id
+        !secret trusted_network: !secret user_id
         !secret vpn_network: !secret user_id
       allow_bypass_login: true
     - type: homeassistant
@@ -87,7 +87,7 @@ script: !include scripts.yaml
 
 mqtt:
   discovery: true
-  broker: 10.0.0.200
+  broker: !secret broker_ip
   birth_message:
     topic: 'hass/status'
     payload: 'online'
