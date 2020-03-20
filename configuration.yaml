@@ -12,6 +12,19 @@ homeassistant:
   time_zone: !secret time_zone_info
   packages: !include_dir_named packages
 
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 127.0.0.1
+        - 10.0.0.0/24
+        - !secret vpn_network
+      trusted_users:
+        127.0.0.1: !secret user_id
+        10.0.0.0/24: !secret user_id
+        !secret vpn_network: !secret user_id
+      allow_bypass_login: true
+    - type: homeassistant
+
 # Show links to resources in log and frontend
 # introduction:
 
@@ -74,10 +87,20 @@ script: !include scripts.yaml
 
 mqtt:
   discovery: true
-  broker: 10.0.0.234
+  broker: 10.0.0.200
   birth_message:
     topic: 'hass/status'
     payload: 'online'
   will_message:
     topic: 'hass/status'
     payload: 'offline'
+
+webhook:
+
+zigbee2mqtt_networkmap:
+
+panel_iframe:
+  networkmap:
+    title: 'Zigbee Map'
+    url: '/local/community/zigbee2mqtt_networkmap/map.html'
+    icon: 'mdi:graphql'
