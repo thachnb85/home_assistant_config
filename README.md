@@ -136,7 +136,7 @@ apt-get install mosquitto
 ```
 apt install mosquitto-clients
 
-mosquitto_sub -h 127.0.0.1 -t "test"
+mosquitto_sub -h 127.0.0.1 -t "test" &
 mosquitto_pub -h 127.0.0.1 -t "test" -m "Hello World" 
 ```
 -> "Hello World" should show up in the terminal
