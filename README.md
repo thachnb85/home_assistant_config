@@ -394,7 +394,7 @@ http://ptvo.info/cc2531-based-router-firmware-136/
 6. For repairing sensors, press reset on each sensors.
 
 
-# 9. Backup scrip
+# 9. Backup script
 ```
 cd ~
 rm -rdf backup
