@@ -392,3 +392,27 @@ HA should be configured with correct timezone for automations working properly.
 http://ptvo.info/cc2531-based-router-firmware-136/
 
 6. For repairing sensors, press reset on each sensors.
+
+
+# 9. Backup scrip
+```
+cd ~
+rm -rdf backup
+mkdir backup
+mv ha.tar.gz backup
+mv data.tar.gz backup
+
+systemctl stop home-assistant.service
+systemctl stop zigbee2mqtt.service
+
+cd /home/homeassistant/
+tar -zcvf ha.tar.gz .homeassistant
+mv ha.tar.gz ~
+
+cd /opt/zigbee2mqtt
+tar -zcvf data.tar.gz data
+mv data.tar.gz ~
+
+systemctl start home-assistant.service
+systemctl start zigbee2mqtt.service
+```
