@@ -395,6 +395,8 @@ http://ptvo.info/cc2531-based-router-firmware-136/
 
 
 # 9. Backup script
+We need to backup home-assistant and zigbee2mqtt data.
+
 ```
 cd ~
 rm -rdf backup
