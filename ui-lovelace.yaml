@@ -29,6 +29,7 @@ views:
           - entity: binary_sensor.0x00158d000273bbe4_contact
             name: Front Door
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.front_door_last_opened
             name: Last Opened
             icon: mdi:history
@@ -36,6 +37,7 @@ views:
           - entity: binary_sensor.0x00158d000275ef5d_contact
             name: Living To Garage Door
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.living_to_garage_door_last_opened
             name: Last Opened
             icon: mdi:history
@@ -43,6 +45,7 @@ views:
           - entity: binary_sensor.living_motion_occupancy
             name: Living Room Motion
             icon: mdi:run-fast
+            state_color: true
           - entity: sensor.living_room_last_motion
             name: Last Motion
             icon: mdi:history
@@ -50,6 +53,7 @@ views:
           - entity: switch.broadlink_switch2
             name: Living Floor Light
             icon: mdi:lava-lamp
+            state_color: true
           - entity: sensor.home_temperature
             name: Home Temperature
             icon: mdi:oil-temperature
@@ -60,6 +64,7 @@ views:
           - entity: binary_sensor.0x00158d000273bb1d_contact
             name: Basement Door
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.basement_door_last_opened
             name: Last Opened
             icon: mdi:history
@@ -67,6 +72,7 @@ views:
           - entity: binary_sensor.0x00158d00020dfca1_occupancy
             name: Basement Motion
             icon: mdi:run-fast
+            state_color: true
           - entity: sensor.basement_last_motion
             name: Last Motion
             icon: mdi:history
@@ -77,6 +83,7 @@ views:
           - entity: binary_sensor.0x00158d00029b063b_contact
             name: Backgate
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.backgate_last_opened
             name: Last Opened
             icon: mdi:history
@@ -87,6 +94,7 @@ views:
           - entity: binary_sensor.0x00158d0003faf12c_occupancy
             icon: mdi:run-fast
             name: Master Motion
+            state_color: true
           - entity: sensor.backgate_last_motion
             name: Last Motion
             icon: mdi:history
@@ -97,6 +105,7 @@ views:
           - entity: binary_sensor.0x00158d000275f11d_contact
             name: Kitchen Door
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.kitchen_door_last_opened
             name: Last Opened
             icon: mdi:history
@@ -104,6 +113,7 @@ views:
           - entity: binary_sensor.0x00158d00040590bd_occupancy
             icon: mdi:run-fast
             name: Kitchen Motion
+            state_color: true
           - entity: sensor.kitchen_last_motion
             name: Last Motion
             icon: mdi:history
@@ -114,6 +124,7 @@ views:
           - entity: binary_sensor.0x00158d00029bf0c3_contact
             name: Garage Door
             secondary_info: last-changed
+            state_color: true
           - entity: sensor.garage_door_last_opened
             name: Last Opened
             icon: mdi:history
@@ -121,13 +132,14 @@ views:
           - entity: switch.broadlink_switch1
             name: Garage Workshop Light
             icon: mdi:ceiling-light
-
+            state_color: true
       - type: entities
         title: Workshop Basement
         entities:
           - entity: binary_sensor.garage_motion_occupancy
             icon: mdi:run-fast
             name: Workshop Motion
+            state_color: true
           - entity: sensor.garage_last_motion
             name: Last Motion
             icon: mdi:history
@@ -209,6 +221,11 @@ views:
       - type: picture-glance
         title: Backyard CCTV
         camera_image: camera.backyard
+        camera_view: live
+        entities: []
+      - type: picture-glance
+        title: Living CCTV
+        camera_image: camera.living
         camera_view: live
         entities: []
 
