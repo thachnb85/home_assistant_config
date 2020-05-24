@@ -34,7 +34,7 @@
       column: 'last_changed'
       value_template: "{{ as_timestamp(value~'+00:00') | timestamp_custom('%a %b %-d %-I:%M%p')}}"
     - name: living room last motion
-      query: "select last_changed from states where friendly_name = 'living_motion_occupancy' and state = 'on' order by last_changed desc;"
+      query: "select last_changed from states where entity_id = 'binary_sensor.living_motion_occupancy' and state = 'on' order by last_changed desc;"
       column: 'last_changed'
       value_template: "{{ as_timestamp(value~'+00:00') | timestamp_custom('%a %b %-d %-I:%M%p')}}"
     - name: basement last motion
