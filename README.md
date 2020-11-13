@@ -314,7 +314,7 @@ Then find and remove entity 0x00158d00029bf0c3 if has
 nano .storage/core.device_registry
 ```
 
-# 7. Trouble Shooting
+# 7. Troubleshooting
 There are most common issues when I update HA:
 ### Update ffmpeg
 Simple solution is to install from source, for example version 3.2 is required.
