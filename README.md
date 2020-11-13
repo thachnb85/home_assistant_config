@@ -418,3 +418,9 @@ mv data.tar.gz ~
 systemctl start home-assistant.service
 systemctl start zigbee2mqtt.service
 ```
+
+# ESP Sensor Guide
+Car presence detection
+https://adonno.com/car-presence-position-detection/
+
+
