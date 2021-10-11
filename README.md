@@ -2,6 +2,12 @@ Travis CI ![alt text](https://travis-ci.org/thachnb85/home_assistant_config.svg?
 
 ![](https://github.com/thachnb85/home_assistant_config/blob/master/HA.png)
 
+# 0. Simple setup
+- Using official HA Pi image
+- For zigbee https://medium.com/@fedorets.alex/hass-io-zigbee2mqtt-io-the-simplest-way-b7375c9fba22
+- For SSH and wifi setup: https://smarthomepursuits.com/connect-to-home-assistant-ssh/
+
+If you want to setup manually you can follow from step 1 below:
 # 1. Hardware Overview
 
 ### Home Assistant
