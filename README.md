@@ -430,3 +430,12 @@ Car presence detection
 https://adonno.com/car-presence-position-detection/
 
 
+
+## Update 2022
+Script about last changed and xxxx hour ago:
+```
+Last changed: {{ as_timestamp(states.binary_sensor.back_gate_contact.last_changed) | timestamp_custom('%Y-%m-%d %H:%M:%S')}}
+{{ ((as_timestamp(now()) - as_timestamp(states.binary_sensor.back_gate_contact.last_changed)) / 3600) | round(2) }} hours ago.
+```
+
+
